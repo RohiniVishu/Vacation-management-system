@@ -1,4 +1,4 @@
-#even for semantic and syntax error both, the squiggly line will come
+#even for semantic and syntax error both, the error line will come
 import tkinter as tk  # all libraries stored in tk 
 from tkinter import messagebox
 import csv
