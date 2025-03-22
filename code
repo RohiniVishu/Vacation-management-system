@@ -1,4 +1,3 @@
-#even for semantic and syntax error both, the error line will come
 import tkinter as tk  # all libraries stored in tk 
 from tkinter import messagebox
 import csv
@@ -6,12 +5,12 @@ import csv
 #orange problem session
 
 #load the dataset
-#file_path=r"C:\Users\Pallavi\traveldest" #if you put r you dont need to change the slash direction
+#file_path=r"C:\Users\Pallavi\traveldest" 
 def load_destinations(file_path):
     destinations=[]
     try:                                           #exception handling blocks. 
         with open(file_path,mode='r') as file:
-            reader=csv.DictReader(file)    #each row is made into a dictionary. key is header, value is value.
+            reader=csv.DictReader(file)    #each row is made into a dictionary.
             for row in reader:             #all values in string, we should convert to int or float
             #parse numeric fields         #reader is a group of dictionaries values
                 row['popularity']=float(row['popularity'])
@@ -23,9 +22,8 @@ def load_destinations(file_path):
         return destinations
     except FileNotFoundError:       #catching exceptions like filenotfound error.
         messagebox.showerror("error",f"file '{file_path}' not found.")  #catches the error and displays in the gui. not in the terminal itself.
-        return[]                #file_path should be in single quotes not double           #file_path is file_path only now. file path value given later
+        return[]                #file_path should be in single quotes not double           #file_path is just file_path now. file path value given later
         #error stored in return empty list
-        #explicitly for each error we can give messagebox, or in general we can give for all error
     except Exception as e:
         messagebox.showerror("error",f"error loading file:{e}")
         return[]
